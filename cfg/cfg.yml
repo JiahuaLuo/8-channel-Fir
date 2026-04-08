@@ -1,8 +1,8 @@
 # Main hammer config file for FIR project
 
 # Top levels
-synthesis.inputs.top_module: "fir_equalizer_8ch_tdm_bsg_top"
-sim.inputs.tb_name: "tb_fir_equalizer_8ch_tdm_bsg_top"
+synthesis.inputs.top_module: "fir_equalizer_8ch_tdm_chip_top"
+sim.inputs.tb_name: "tb_fir_equalizer_8ch_tdm_chip_top"
 
 # Don't synthesize these gate-level netlist modules
 synthesis.inputs.preserve_modules: []
@@ -14,7 +14,7 @@ vlsi.inputs:
   custom_sdc_constraints: []
 
   custom_sdc_files:
-    - "/homes/jiahua25/ee477/module0/ee477-designs-module1/8ch/cfg/constraints.tcl"
+    - "/home/jiahua25/ee477/module0/ee477-designs-module1/8ch_FIR/cfg/constraints.tcl"
 
 # Formal HDL commands (for parsing source files)
 # Copy sim input options, since they share the same syntax for some commands

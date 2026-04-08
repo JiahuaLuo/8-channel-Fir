@@ -12,19 +12,29 @@ The project focuses on an 8-channel FIR equalizer architecture with multiple int
 
 The current active setup is centered around:
 
-- Top module: `fir_equalizer_8ch_tdm_bsg_top`
-- Testbench: `tb_fir_equalizer_8ch_tdm_bsg_top`
+- Top module: `fir_equalizer_8ch_tdm_chip_top`
+- Testbench: `tb_fir_equalizer_8ch_tdm_chip_top`
 - Constraints: `cfg/constraints.tcl`
 
-## Input Format
+The internal verified system-level wrapper `fir_equalizer_8ch_tdm_bsg_top` is still kept in the repo. The new chip-level wrapper compresses the external interface while preserving the existing internal control and data paths.
 
-One valid beat on BSG-Link #1 carries a single sample transaction in the form:
+## External Interface
+
+The chip-level wrapper exposes:
+
+- Real-time input path: `sample_valid`, `sample_ready`, `sample_channel_id[2:0]`, `sample_data[7:0]`
+- Narrow config/debug path: `cfg_valid`, `cfg_write`, `cfg_ready`, `cfg_data[3:0]`, `cfg_resp_valid`, `cfg_resp_data[3:0]`
+- Real-time output path: `out_bit[7:0]`, `out_frame_valid`, `out_channel_id[2:0]`
+
+One valid sample beat carries a single transaction in the form:
 
 ```text
 {channel_id[2:0], sample_data[7:0]}
 ```
 
 This packs the target channel and its 8-bit sample value into one transfer.
+
+The narrow config/debug path is translated back into the original internal wide control interface by `cfg_nibble_adapter.sv`.
 
 ## Directory Structure
 
@@ -40,8 +50,11 @@ Important files in `v/` include:
 
 - `fir_equalizer_8ch_bsg_top.sv`
 - `fir_equalizer_8ch_tdm_bsg_top.sv`
+- `fir_equalizer_8ch_tdm_chip_top.sv`
+- `cfg_nibble_adapter.sv`
 - `tb_fir_equalizer_8ch_bsg_top.sv`
 - `tb_fir_equalizer_8ch_tdm_bsg_top.sv`
+- `tb_fir_equalizer_8ch_tdm_chip_top.sv`
 
 ## Common Commands
 

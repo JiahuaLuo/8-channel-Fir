@@ -16,10 +16,12 @@ synthesis.inputs.input_files: [
   "v/fir_equalizer_8ch.sv",
   "v/fir_equalizer_8ch_tdm.sv",
   "v/cfg_debug_ctrl.sv",
+  "v/cfg_nibble_adapter.sv",
   "v/probe_mux_4ch.sv",
   "v/fir_equalizer_4ch_bsg_top.sv",
   "v/fir_equalizer_8ch_bsg_top.sv",
-  "v/fir_equalizer_8ch_tdm_bsg_top.sv"
+  "v/fir_equalizer_8ch_tdm_bsg_top.sv",
+  "v/fir_equalizer_8ch_tdm_chip_top.sv"
 ]
 synthesis.inputs.input_files_meta: [append, subst]
 
