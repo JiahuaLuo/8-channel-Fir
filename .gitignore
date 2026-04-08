@@ -1,0 +1,10 @@
+build/
+**/build/
+*.log
+*.fsdb
+*.vcd
+output.json
+novas.conf
+novas.rc
+verdiLog/
+vfastLog/

@@ -1,0 +1,28 @@
+# src.yml - FIR project source file config
+
+# List of Verilog/SystemVerilog design source files
+# Only include DUT / design RTL here.
+# Do NOT put testbench files in src.yml.
+
+synthesis.inputs.input_files: [
+  "v/sample_adapter.sv",
+  "v/weight_store_25.sv",
+  "v/linebuf_25.sv",
+  "v/fir25_mac.sv",
+  "v/requant_sat.sv",
+  "v/decision_downsample.sv",
+  "v/fir_equalizer_with_decision.sv",
+  "v/fir_equalizer_4ch.sv",
+  "v/fir_equalizer_8ch.sv",
+  "v/fir_equalizer_8ch_tdm.sv",
+  "v/cfg_debug_ctrl.sv",
+  "v/probe_mux_4ch.sv",
+  "v/fir_equalizer_4ch_bsg_top.sv",
+  "v/fir_equalizer_8ch_bsg_top.sv",
+  "v/fir_equalizer_8ch_tdm_bsg_top.sv"
+]
+synthesis.inputs.input_files_meta: [append, subst]
+
+# Add synthesis input files to simulation inputs (RTL sim)
+sim.inputs.input_files: synthesis.inputs.input_files
+sim.inputs.input_files_meta: [crossref, subst]

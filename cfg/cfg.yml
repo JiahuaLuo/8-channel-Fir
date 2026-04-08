@@ -1,0 +1,32 @@
+# Main hammer config file for FIR project
+
+# Top levels
+synthesis.inputs.top_module: "fir_equalizer_8ch_tdm_bsg_top"
+sim.inputs.tb_name: "tb_fir_equalizer_8ch_tdm_bsg_top"
+
+# Don't synthesize these gate-level netlist modules
+synthesis.inputs.preserve_modules: []
+
+# Custom SDC constraints
+vlsi.inputs:
+  # Leave inline constraints empty so cfg/constraints.tcl is the single
+  # source of timing truth.
+  custom_sdc_constraints: []
+
+  custom_sdc_files:
+    - "/homes/jiahua25/ee477/module0/ee477-designs-module1/8ch/cfg/constraints.tcl"
+
+# Formal HDL commands (for parsing source files)
+# Copy sim input options, since they share the same syntax for some commands
+formal.inputs.hdl_cmd_list: sim.inputs.options
+formal.inputs.hdl_cmd_list_meta: [crossref, subst]
+
+# Placement Constraints
+vlsi.inputs.placement_constraints:
+  - path: "TOP"
+    type: toplevel
+    width:  1200
+    height: 1200
+    x: 0
+    y: 0
+    margins: {left: 0, right: 0, top: 0, bottom: 0}

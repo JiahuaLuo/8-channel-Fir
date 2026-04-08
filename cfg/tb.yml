@@ -1,0 +1,27 @@
+# tb.yml - FIR simulation testbench configuration
+
+# List of testbench source files needed for simulation.
+sim.inputs.tb_input_files: [
+  "v/tb_fir_equalizer_8ch_tdm_bsg_top.sv"
+]
+sim.inputs.tb_input_files_meta: [subst]
+
+# Top-level simulation module name
+sim.inputs.tb_name: "tb_fir_equalizer_8ch_tdm_bsg_top"
+
+# DUT instance path inside the testbench
+sim.inputs.dut_path: "tb_fir_equalizer_8ch_tdm_bsg_top.dut"
+
+# Include directories for simulation
+sim.inputs.tb_incdir: [
+  "v"
+]
+sim.inputs.tb_incdir_meta: [subst]
+
+# Macro definitions for simulation
+sim.inputs.tb_defines: []
+sim.inputs.tb_defines_meta: [subst]
+
+# Trace files are not used in this FIR testbench
+sim.inputs.trace_files: []
+sim.inputs.trace_files_meta: [subst]
