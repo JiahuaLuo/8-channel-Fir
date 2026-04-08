@@ -1,6 +1,6 @@
-# 8-Channel FIR Equalizer
+# 8ch_FIR
 
-This repository contains a standalone RTL project for an 8-channel FIR equalizer developed in the EE477 flow. The design includes channelized FIR datapaths, top-level wrappers, and testbenches for simulation and implementation experiments.
+This repository contains a standalone RTL project for an 8-channel FIR equalizer developed in the EE477 flow. The local project directory is named `8ch_FIR`, and the design includes channelized FIR datapaths, top-level wrappers, and testbenches for simulation and implementation experiments.
 
 ## Project Overview
 
@@ -59,4 +59,3 @@ make sim-par
 
 - Generated outputs such as build artifacts, logs, and waveform files are excluded from version control.
 - This repository is intended to keep the 8-channel project isolated from other coursework directories.
-
