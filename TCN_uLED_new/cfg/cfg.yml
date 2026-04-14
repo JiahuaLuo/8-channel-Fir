@@ -1,4 +1,4 @@
-# Main hammer config file for 2ch TCN test1
+# Main hammer config file for TCN_uLED_new
 
 synthesis.inputs.top_module: "tcn_equalizer_2ch_tdm_chip_top"
 sim.inputs.tb_name: "tb_tcn_equalizer_2ch_tdm_chip_top"
@@ -9,7 +9,7 @@ vlsi.inputs:
   custom_sdc_constraints: []
 
   custom_sdc_files:
-    - "/homes/jiahua25/ee477/module0/ee477-designs-module1/2ch_TCN_test1 copy/cfg/constraints.tcl"
+    - "/homes/jiahua25/ee477/module0/ee477-designs-module1/TCN_uLED_new/cfg/constraints.tcl"
 
 formal.inputs.hdl_cmd_list: sim.inputs.options
 formal.inputs.hdl_cmd_list_meta: [crossref, subst]

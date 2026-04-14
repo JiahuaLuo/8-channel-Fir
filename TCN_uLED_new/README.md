@@ -1,6 +1,6 @@
-# 2ch_TCN_test1
+# TCN_uLED_new
 
-`2ch_TCN_test1` is a first-pass 2-channel ASIC-oriented TDM equalizer that
+`TCN_uLED_new` is a first-pass 2-channel ASIC-oriented TDM equalizer that
 keeps the existing chip-top/config shell style while replacing the FIR-style
 datapath with a small fixed-weight TCN.
 
