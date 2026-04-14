@@ -1,0 +1,18 @@
+# src.yml - TCN test1 source file config
+
+synthesis.inputs.input_files: [
+  "v/tcn_cfg_pkg.sv",
+  "v/conv_1d_ctx.sv",
+  "v/tcn_block_ctx.sv",
+  "v/tcn_top_ctx.sv",
+  "v/tcn_equalizer_2ch_tdm.sv",
+  "v/cfg_debug_ctrl.sv",
+  "v/cfg_nibble_adapter.sv",
+  "v/probe_mux_4ch.sv",
+  "v/tcn_equalizer_2ch_tdm_bsg_top.sv",
+  "v/tcn_equalizer_2ch_tdm_chip_top.sv"
+]
+synthesis.inputs.input_files_meta: [append, subst]
+
+sim.inputs.input_files: synthesis.inputs.input_files
+sim.inputs.input_files_meta: [crossref, subst]

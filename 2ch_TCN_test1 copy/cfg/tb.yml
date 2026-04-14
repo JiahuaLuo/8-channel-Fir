@@ -1,0 +1,20 @@
+# tb.yml - TCN test1 simulation testbench configuration
+
+sim.inputs.tb_input_files: [
+  "v/tb_tcn_equalizer_2ch_tdm_chip_top.sv"
+]
+sim.inputs.tb_input_files_meta: [subst]
+
+sim.inputs.tb_name: "tb_tcn_equalizer_2ch_tdm_chip_top"
+sim.inputs.dut_path: "tb_tcn_equalizer_2ch_tdm_chip_top.dut"
+
+sim.inputs.tb_incdir: [
+  "v"
+]
+sim.inputs.tb_incdir_meta: [subst]
+
+sim.inputs.tb_defines: []
+sim.inputs.tb_defines_meta: [subst]
+
+sim.inputs.trace_files: []
+sim.inputs.trace_files_meta: [subst]

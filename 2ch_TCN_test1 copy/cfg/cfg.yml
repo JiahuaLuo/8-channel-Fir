@@ -1,0 +1,24 @@
+# Main hammer config file for 2ch TCN test1
+
+synthesis.inputs.top_module: "tcn_equalizer_2ch_tdm_chip_top"
+sim.inputs.tb_name: "tb_tcn_equalizer_2ch_tdm_chip_top"
+
+synthesis.inputs.preserve_modules: []
+
+vlsi.inputs:
+  custom_sdc_constraints: []
+
+  custom_sdc_files:
+    - "/homes/jiahua25/ee477/module0/ee477-designs-module1/2ch_TCN_test1 copy/cfg/constraints.tcl"
+
+formal.inputs.hdl_cmd_list: sim.inputs.options
+formal.inputs.hdl_cmd_list_meta: [crossref, subst]
+
+vlsi.inputs.placement_constraints:
+  - path: "TOP"
+    type: toplevel
+    width: 1200
+    height: 1200
+    x: 0
+    y: 0
+    margins: {left: 0, right: 0, top: 0, bottom: 0}
